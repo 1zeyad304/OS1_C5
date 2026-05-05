@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU Scheduling Simulator — C5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>⚙️ CPU Scheduling Simulator</h1>
+        <p>Round Robin vs Shortest Job First (SJF)</p>
+    </header>
+ 
+    <div class="container">
+ 
+        <!-- Input Panel -->
+        <section class="card" id="input-section">
+            <h2>📥 Input Panel</h2>
+ 
+            <div class="input-row">
+                <label>Number of Processes:</label>
+                <input type="number" id="num-processes" min="1" max="20" value="4">
+ 
+                <label>Time Quantum (RR):</label>
+                <input type="number" id="quantum" min="1" value="2" placeholder="required">
+ 
+                <button onclick="generateTable()">Generate Table</button>
+            </div>
+ 
+            <div id="process-table-wrapper" style="display:none;">
+                <table id="input-table">
+                    <thead>
+                        <tr>
+                            <th>PID</th>
+                            <th>Arrival Time</th>
+                            <th>Burst Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="input-body"></tbody>
+                </table>
+ 
+                <div id="error-msg" class="error-msg"></div>
+ 
+                <button class="run-btn" onclick="runSimulation()">
+                    ▶ Run Simulation
+                </button>
+            </div>
+        </section>
+ 
+        <!-- Results -->
+        <div id="results-section" style="display:none;">
+ 
+            <!-- Ready Queue View for RR -->
+            <section class="card">
+                <h2>🔄 Ready Queue — Round Robin (Quantum = <span id="quantum-display">?</span>)</h2>
+                <div id="ready-queue-view" class="ready-queue-container"></div>
+            </section>
+ 
+            <!-- Gantt Charts -->
+            <section class="card">
+                <h2>📊 Gantt Chart — Round Robin</h2>
+                <div id="gantt-rr" class="gantt-container"></div>
+            </section>
+ 
+            <section class="card">
+                <h2>📊 Gantt Chart — SJF (Non-Preemptive)</h2>
+                <div id="gantt-sjf" class="gantt-container"></div>
+            </section>
+
+            <section class="card">
+                <h2>📊 Gantt Chart — SRTF (Preemptive SJF)</h2>
+                <div id="gantt-srtf" class="gantt-container"></div>
+            </section>
+
+ 
+            <!-- Results Tables -->
+            <section class="card">
+                <h2>📋 Results — Round Robin</h2>
+                <div id="table-rr"></div>
+            </section>
+ 
+            <section class="card">
+                <h2>📋 Results — SJF</h2>
+                <div id="table-sjf"></div>
+            </section>
+            
+            <section class="card">
+                <h2>📋 Results — SRTF (Preemptive SJF)</h2>
+                <div id="table-srtf"></div>
+            </section>
+ 
+            <!-- Comparison Summary -->
+            <section class="card">
+                <h2>⚖️ Comparison Summary</h2>
+                <div id="comparison"></div>
+            </section>
+ 
+            <!-- Final Conclusion -->
+            <section class="card">
+                <h2>📝 Final Conclusion</h2>
+                <div id="conclusion"></div>
+            </section>
+ 
+        </div>
+    </div>
+ 
+    <script src="app.js"></script>
+</body>
+</html>
+</html>

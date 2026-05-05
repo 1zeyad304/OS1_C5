@@ -1,0 +1,299 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    min-height: 100vh;
+}
+ 
+/* ── Header ── */
+header {
+    background: linear-gradient(135deg, #1e3a5f, #059669);
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+ 
+header h1 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+ 
+header p {
+    font-size: 1rem;
+    color: #6ee7b7;
+}
+ 
+/* ── Layout ── */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+ 
+.card {
+    background: #1e293b;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+    border: 1px solid #334155;
+}
+ 
+.card h2 {
+    font-size: 1.3rem;
+    color: #34d399;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #334155;
+}
+ 
+/* ── Input Row ── */
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+ 
+.input-row label {
+    font-size: 1rem;
+    color: #94a3b8;
+}
+ 
+.input-row input {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #475569;
+    background: #0f172a;
+    color: #e2e8f0;
+    font-size: 1rem;
+    width: 90px;
+    text-align: center;
+}
+ 
+.input-row button, .run-btn {
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: none;
+    background: #059669;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+ 
+.input-row button:hover, .run-btn:hover {
+    background: #047857;
+}
+ 
+.run-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #059669, #0891b2);
+}
+ 
+.run-btn:hover {
+    background: linear-gradient(135deg, #047857, #0e7490);
+}
+ 
+/* ── Tables ── */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+ 
+th {
+    background: #134e2a;
+    color: #6ee7b7;
+    padding: 12px;
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+ 
+td {
+    padding: 10px 12px;
+    text-align: center;
+    border-bottom: 1px solid #334155;
+    font-size: 0.95rem;
+}
+ 
+td input {
+    width: 70px;
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #475569;
+    background: #0f172a;
+    color: #e2e8f0;
+    text-align: center;
+    font-size: 0.95rem;
+}
+ 
+tr:hover td {
+    background: #263548;
+}
+ 
+.avg-row td {
+    background: #134e2a;
+    color: #6ee7b7;
+    font-weight: bold;
+}
+ 
+/* ── Gantt Chart ── */
+.gantt-container {
+    overflow-x: auto;
+    padding: 10px 0;
+}
+ 
+.gantt-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-width: max-content;
+}
+ 
+.gantt-blocks {
+    display: flex;
+    height: 50px;
+}
+ 
+.gantt-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: white;
+    border-radius: 6px;
+    margin: 0 2px;
+    min-width: 50px;
+    transition: transform 0.1s;
+}
+ 
+.gantt-block:hover {
+    transform: scaleY(1.1);
+}
+ 
+.gantt-times {
+    display: flex;
+    margin-top: 6px;
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+ 
+.gantt-time-label {
+    text-align: left;
+    min-width: 50px;
+}
+ 
+/* ── Ready Queue ── */
+.ready-queue-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0;
+}
+ 
+.rq-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+ 
+.rq-arrow {
+    font-size: 1.4rem;
+    color: #475569;
+    align-self: center;
+    margin-top: 10px;
+}
+ 
+.rq-block {
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: white;
+    min-width: 54px;
+    text-align: center;
+}
+ 
+.rq-label {
+    font-size: 0.72rem;
+    color: #64748b;
+}
+ 
+/* ── Comparison Grid ── */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    text-align: center;
+}
+ 
+.comp-header {
+    font-weight: bold;
+    color: #34d399;
+    padding: 10px;
+    background: #134e2a;
+    border-radius: 8px;
+}
+ 
+.comp-cell {
+    padding: 12px;
+    background: #0f172a;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+ 
+.winner {
+    background: #14532d;
+    color: #86efac;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 12px;
+}
+ 
+.loser {
+    background: #1e293b;
+    color: #94a3b8;
+    border-radius: 8px;
+    padding: 12px;
+}
+ 
+/* ── Conclusion ── */
+.conclusion-box {
+    background: #0f172a;
+    border-left: 4px solid #059669;
+    padding: 20px;
+    border-radius: 8px;
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+ 
+.conclusion-box p {
+    margin-bottom: 10px;
+}
+ 
+.conclusion-box strong {
+    color: #34d399;
+}
+ 
+/* ── Error ── */
+.error-msg {
+    color: #f87171;
+    font-size: 0.95rem;
+    margin-top: 10px;
+    min-height: 20px;
+}
